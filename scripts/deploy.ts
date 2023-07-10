@@ -1,5 +1,9 @@
 //import
-const { ethers, run, network } = require("hardhat");
+// require is used in JS
+//const { ethers, run, network } = require("hardhat");
+
+//Typescript Imports
+import { ethers, run, network} from "hardhat";
 
 // async main
 async function main() {
@@ -31,14 +35,14 @@ async function main() {
 }
 
 // async function verify(contractAddress, args) {
-const verify = async (contractAddress, args) => {
+const verify = async (contractAddress: string, args: any[]) => {
     console.log("Verifying contract...");
     try {
         await run("verify:verify", {
             address: contractAddress,
             constructorArguments: args,
         });
-    } catch (e) {
+    } catch (e: any) {
         if (e.message.toLowerCase().includes("already verified")) {
             console.log("Already Verified");
         } else {

@@ -1,9 +1,17 @@
+/*
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 require("./tasks/block-number");
 require("@nomiclabs/hardhat-ethers");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
+*/
+import "@typechain/hardhat"
+import "dotenv/config";
+import "./tasks/block-number";
+import "@nomiclabs/hardhat-ethers";
+import "hardhat-gas-reporter";
+import "solidity-coverage";
 /** @type import('hardhat/config').HardhatUserConfig */
 
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || "https://eth-sepolia";
